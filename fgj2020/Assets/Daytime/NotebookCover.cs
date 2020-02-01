@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NotebookCover : MonoBehaviour
 {
-    public GameObject OpenNotebook;
+    public OpenNotebook OpenNotebook;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,8 @@ public class NotebookCover : MonoBehaviour
     public void OpenBook()
     {
         Debug.Log("Openbook");
-        OpenNotebook.SetActive(true);
+        OpenNotebook.Open();
+
         gameObject.SetActive(false);
     }
 }
