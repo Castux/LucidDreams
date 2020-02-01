@@ -8,11 +8,13 @@ using UnityEngine;
 public class PlayerProgression : MonoBehaviour
 {
     private List<Clue> collectedClues;
+    private int totalPoints;
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
         collectedClues = new List<Clue>();
+        totalPoints = 25;
     }
 
     public List<string> GetCollectedClueTexts()
@@ -32,5 +34,11 @@ public class PlayerProgression : MonoBehaviour
         {
             collectedClues.Add(clue);
         }
+    }
+
+    public void ModifyPoints(int points)
+    {
+        totalPoints += points;
+        // TODO: update UI
     }
 }
