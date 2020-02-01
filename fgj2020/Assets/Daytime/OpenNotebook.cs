@@ -14,18 +14,6 @@ public class OpenNotebook : MonoBehaviour
 
     private int currentPage;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Open()
     {
         gameObject.SetActive(true);
@@ -44,7 +32,9 @@ public class OpenNotebook : MonoBehaviour
 
     private void Close()
     {
-        NotebookCover.SetActive(true);
-        gameObject.SetActive(false);
+        GetComponent<FadeOut>().StartFadeOut(() =>
+        {
+            NotebookCover.SetActive(true);
+        });
     }
 }

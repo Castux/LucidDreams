@@ -522,6 +522,8 @@ GameObject:
   - component: {fileID: 505482577}
   - component: {fileID: 505482579}
   - component: {fileID: 505482580}
+  - component: {fileID: 505482578}
+  - component: {fileID: 505482581}
   m_Layer: 5
   m_Name: OpenNotebook
   m_TagString: Untagged
@@ -552,6 +554,18 @@ RectTransform:
   m_AnchoredPosition: {x: -218.8, y: 14}
   m_SizeDelta: {x: -633.1, y: -131.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &505482578
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505482576}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!222 &505482579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -577,6 +591,18 @@ MonoBehaviour:
   LeftArrow: {fileID: 658561755}
   RightArrow: {fileID: 400223487}
   NotebookCover: {fileID: 870003572}
+--- !u!114 &505482581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505482576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56932abaf91643d7b1b43ac88294f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658561755
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +813,8 @@ GameObject:
   - component: {fileID: 870003575}
   - component: {fileID: 870003574}
   - component: {fileID: 870003576}
+  - component: {fileID: 870003577}
+  - component: {fileID: 870003578}
   m_Layer: 5
   m_Name: NotebookCover
   m_TagString: Untagged
@@ -862,6 +890,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpenNotebook: {fileID: 505482580}
+--- !u!225 &870003577
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870003572}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &870003578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870003572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56932abaf91643d7b1b43ac88294f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1221093944
 GameObject:
   m_ObjectHideFlags: 0
