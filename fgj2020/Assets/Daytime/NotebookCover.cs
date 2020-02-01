@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NotebookCover : MonoBehaviour
 {
@@ -8,7 +6,7 @@ public class NotebookCover : MonoBehaviour
 
     public void Start()
     {
-        GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeIn, () => { });
+        GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeIn);
     }
 
     public void OpenBook()
