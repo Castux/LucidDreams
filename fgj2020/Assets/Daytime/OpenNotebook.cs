@@ -7,7 +7,8 @@ public class OpenNotebook : MonoBehaviour
     public GameObject LeftArrow;
     public GameObject RightArrow;
 
-    public GameObject Container;
+    public GameObject ProblemsPage;
+    public GameObject CluesContainer;
     public GameObject ClueTextPrefab;
 
     public GameObject NotebookCover;
@@ -20,21 +21,23 @@ public class OpenNotebook : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
-        currentPage = 0;
+        currentPage = -1;
         Populate(new List<string>());
+
+        UpdatePageContent();
     }
 
     public void FlipPage(int direction)
     {
         currentPage += direction;
 
-        if (currentPage < 0)
+        if (currentPage < -1)
         {
             Close();
         }
         else
         {
-            UpdateCluesOnPage();
+            UpdatePageContent();
         }
     }
 
@@ -46,8 +49,29 @@ public class OpenNotebook : MonoBehaviour
 
         for (int i = 0; i < 20; i++)
             clues.Add("This is a super clue. With it you'll figure out why your life sucks so much. It's sad really. But true. " + i);
+    }
 
-        UpdateCluesOnPage();
+    private void UpdatePageContent()
+    {
+        if (currentPage == -1)
+        {
+            ProblemsPage.SetActive(true);
+            CluesContainer.SetActive(false);
+
+            UpdateProblemsPage();
+        }
+        else
+        {
+            ProblemsPage.SetActive(false);
+            CluesContainer.SetActive(true);
+
+            UpdateCluesOnPage();
+        }
+    }
+
+    private void UpdateProblemsPage()
+    {
+
     }
 
     private void UpdateCluesOnPage()
@@ -55,7 +79,7 @@ public class OpenNotebook : MonoBehaviour
         var startIndex = currentPage * CluesPerSpread;
         var endIndex = Mathf.Min((currentPage + 1) * CluesPerSpread, clues.Count) - 1;
 
-        foreach (Transform child in Container.transform)
+        foreach (Transform child in CluesContainer.transform)
         {
             Destroy(child.gameObject);
         }
@@ -63,7 +87,7 @@ public class OpenNotebook : MonoBehaviour
         for(int i = startIndex; i <= endIndex; i++)
         {
             var clue = Instantiate(ClueTextPrefab);
-            clue.transform.SetParent(Container.transform);
+            clue.transform.SetParent(CluesContainer.transform);
             clue.transform.localScale = Vector3.one;
 
             var textComp = clue.GetComponentInChildren<Text>();
