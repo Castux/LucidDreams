@@ -61,6 +61,7 @@ public class ChoicePopUp : MonoBehaviour
         ClearChoices();
 
         goToDreamButton.gameObject.SetActive(true);
+        notebook.LeftArrow.SetActive(false);
     }
 
     private void ClearChoices()

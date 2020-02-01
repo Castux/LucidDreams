@@ -54,7 +54,6 @@ public class OpenNotebook : MonoBehaviour
             problemButtons[i].onClick.AddListener(() =>
             {
                 ProblemsPage.SetActive(false);
-                LeftArrow.SetActive(false);
                 RightArrow.SetActive(false);
                 choicePopUp.OpenChoicePopUp(problems[tmp]);
             });
@@ -72,6 +71,14 @@ public class OpenNotebook : MonoBehaviour
 
     public void FlipPage(int direction)
     {
+        if (choicePopUp.gameObject.activeSelf)
+        {
+            choicePopUp.gameObject.SetActive(false);
+            UpdatePageContent();
+
+            return;
+        }
+
         currentPage += direction;
 
         if (currentPage < 0)
