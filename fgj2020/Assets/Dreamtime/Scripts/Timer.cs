@@ -18,9 +18,10 @@ public class Timer : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
 
-        if (remainingTime <= 0)
+        if (remainingTime < 0)
         {
-            // TODO: skip to daytime
+            remainingTime = 0;
+            FindObjectOfType<PlayerProgression>().SwitchToDayTime();
         }
         else
         {

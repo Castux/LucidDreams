@@ -32,8 +32,7 @@ public class Spawner : MonoBehaviour
     {
         if (currentPlayer != null && currentPlayer.transform.position.y <= FallThreshold.transform.position.y)
         {
-            //Spawn();
-            playerProg.SwitchToDayTime();
+            Spawn();
         }
     }
 }
