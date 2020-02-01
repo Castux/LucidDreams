@@ -33,6 +33,7 @@ public class ChoicePopUp : MonoBehaviour
 
     public void OpenChoicePopUp(Problem problem)
     {
+        gameObject.SetActive(true);
         uiParent.SetActive(true);
         problemTitleText.SetText(problem.problemTitle);
         foreach(Button choiceButton in choiceButtons)

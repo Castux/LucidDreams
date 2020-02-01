@@ -12,6 +12,8 @@ public class OpenNotebook : MonoBehaviour
     public GameObject CluesContainer;
     public GameObject ClueTextPrefab;
 
+    public ChoicePopUp choicePopUp;
+
     public GameObject NotebookCover;
 
     public int CluesPerSpread = 12;
@@ -24,12 +26,14 @@ public class OpenNotebook : MonoBehaviour
     public void Start()
     {
         var playerProg = FindObjectOfType<PlayerProgression>();
-        SetProblems(playerProg.problems, playerProg.solvedProblems);
+
+        if(playerProg != null)
+            SetProblems(playerProg.problems, playerProg.solvedProblems);
     }
 
     private void SetProblems(List<Problem> problems, List<Problem> solvedProblems)
     {
-        foreach(Button button in problemButtons)
+        foreach (Button button in problemButtons)
         {
             button.onClick.RemoveAllListeners();
         }
@@ -49,20 +53,18 @@ public class OpenNotebook : MonoBehaviour
             problemButtons[i].gameObject.SetActive(true);
             problemButtons[i].onClick.AddListener(() =>
             {
-                OpenChoiceUI(problems[tmp]);
+                ProblemsPage.SetActive(false);
+                LeftArrow.SetActive(false);
+                RightArrow.SetActive(false);
+                choicePopUp.OpenChoicePopUp(problems[tmp]);
             });
         }
-    }
-
-    void OpenChoiceUI(Problem problem)
-    {
-        FindObjectOfType<ChoicePopUp>().OpenChoicePopUp(problem);
     }
 
     public void Open()
     {
         gameObject.SetActive(true);
-        currentPage = -1;
+        currentPage = 0;
         Populate(new List<string>());
 
         UpdatePageContent();
@@ -72,7 +74,7 @@ public class OpenNotebook : MonoBehaviour
     {
         currentPage += direction;
 
-        if (currentPage < -1)
+        if (currentPage < 0)
         {
             Close();
         }
@@ -94,7 +96,7 @@ public class OpenNotebook : MonoBehaviour
 
     private void UpdatePageContent()
     {
-        if (currentPage == -1)
+        if (currentPage == (clues.Count + CluesPerSpread - 1) / CluesPerSpread)
         {
             ProblemsPage.SetActive(true);
             CluesContainer.SetActive(false);
@@ -112,7 +114,7 @@ public class OpenNotebook : MonoBehaviour
 
     private void UpdateProblemsPage()
     {
-
+        RightArrow.SetActive(false);
     }
 
     private void UpdateCluesOnPage()
@@ -136,7 +138,7 @@ public class OpenNotebook : MonoBehaviour
             textComp.alignment = (i - startIndex <= 5) ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
         }
 
-        RightArrow.SetActive(endIndex < clues.Count - 1);
+        RightArrow.SetActive(true);
     }
 
     private void Close()

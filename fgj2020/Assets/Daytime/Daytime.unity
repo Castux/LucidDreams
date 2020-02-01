@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1814778954, guid: d4ed1dcfa4028024a8a9f99f4115c7e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5007333546402455560, guid: d4ed1dcfa4028024a8a9f99f4115c7e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -235,7 +239,12 @@ PrefabInstance:
     - target: {fileID: 5007333546402455563, guid: d4ed1dcfa4028024a8a9f99f4115c7e0,
         type: 3}
       propertyPath: m_Name
-      value: ChoiceUI
+      value: ChoicePopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007333546402455563, guid: d4ed1dcfa4028024a8a9f99f4115c7e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4ed1dcfa4028024a8a9f99f4115c7e0, type: 3}
@@ -245,6 +254,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 65633154}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &65633156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007333546402455561, guid: d4ed1dcfa4028024a8a9f99f4115c7e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 65633154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ce53d06876f3b44784452f5ad853cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &150847468
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +852,7 @@ MonoBehaviour:
   CluesContainer: {fileID: 1310257602}
   ClueTextPrefab: {fileID: 2949883643338735083, guid: 863d4dac5aa2c4aa5a8ff9c0d16a6d22,
     type: 3}
+  choicePopUp: {fileID: 65633156}
   NotebookCover: {fileID: 870003572}
   CluesPerSpread: 12
   problemButtons:
