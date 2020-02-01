@@ -42,10 +42,12 @@ public class ChoicePopUp : MonoBehaviour
 
         for (int i = 0; i < problem.choices.Count; i++)
         {
+            var tmp = i;
+
             choiceButtons[i].gameObject.SetActive(true);
             choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().SetText(problem.choices[i].choiceText);
             choiceButtons[i].onClick.RemoveAllListeners();
-            choiceButtons[i].onClick.AddListener(() => ChooseChoice(problem, problem.choices[i].points));
+            choiceButtons[i].onClick.AddListener(() => ChooseChoice(problem, problem.choices[tmp].points));
         }
     }
 

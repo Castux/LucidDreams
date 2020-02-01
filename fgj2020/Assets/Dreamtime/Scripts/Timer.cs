@@ -20,9 +20,11 @@ public class Timer : MonoBehaviour
 
         if (remainingTime <= 0)
         {
+            // TODO: skip to daytime
         }
-
-        var ts = TimeSpan.FromSeconds(remainingTime).ToString("mm\\:ss");
-        label.text = ts;
+        else
+        {
+            label.text = TimeSpan.FromSeconds(remainingTime).ToString("mm\\:ss");
+        }
     }
 }

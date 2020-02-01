@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Dreamtime/Scenes/DreamWorld.unity
+    guid: 1ec9d473a3e3e154bba80e931a8050fd
+  - enabled: 1
+    path: Assets/Daytime/Daytime.unity
+    guid: 7090a4f8a367c4b1ab9d2b2bde416760
   m_configObjects: {}

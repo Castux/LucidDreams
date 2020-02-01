@@ -6,6 +6,9 @@ public class NotebookCover : MonoBehaviour
 
     public void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeIn);
     }
 

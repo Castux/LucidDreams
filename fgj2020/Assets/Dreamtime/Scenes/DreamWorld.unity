@@ -284,6 +284,18 @@ MonoBehaviour:
   showTime: 3
   hideTime: 3
   hideDelay: 4
+--- !u!114 &265768001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6780187832911901917, guid: 438243c8e83a1db4ab539404cb7d2d76,
+    type: 3}
+  m_PrefabInstance: {fileID: 3482342946977103374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de9bdc21649da144936fe61eb8be9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578578013
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +374,7 @@ MonoBehaviour:
     type: 3}
   FallThreshold: {fileID: 578578013}
   worldRotater: {fileID: 6029762347039293059}
+  playerProg: {fileID: 265768001}
 --- !u!1 &747445431
 GameObject:
   m_ObjectHideFlags: 0

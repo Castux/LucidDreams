@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
     public GameObject FallThreshold;
 
     public RotateWorldAroundPlayer worldRotater;
+    public PlayerProgression playerProg;
 
     private GameObject currentPlayer;
 
@@ -31,7 +32,8 @@ public class Spawner : MonoBehaviour
     {
         if (currentPlayer != null && currentPlayer.transform.position.y <= FallThreshold.transform.position.y)
         {
-            Spawn();
+            //Spawn();
+            playerProg.SwitchToDayTime();
         }
     }
 }

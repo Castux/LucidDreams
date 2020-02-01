@@ -21,7 +21,13 @@ public class OpenNotebook : MonoBehaviour
 
     public List<Button> problemButtons;
 
-    public void SetProblems(List<Problem> problems, List<Problem> solvedProblems)
+    public void Start()
+    {
+        var playerProg = FindObjectOfType<PlayerProgression>();
+        SetProblems(playerProg.problems, playerProg.solvedProblems);
+    }
+
+    private void SetProblems(List<Problem> problems, List<Problem> solvedProblems)
     {
         foreach(Button button in problemButtons)
         {
@@ -38,8 +44,13 @@ public class OpenNotebook : MonoBehaviour
                 continue;
             }
 
+            var tmp = i;
+
             problemButtons[i].gameObject.SetActive(true);
-            problemButtons[i].onClick.AddListener(() => OpenChoiceUI(problems[i]));
+            problemButtons[i].onClick.AddListener(() =>
+            {
+                OpenChoiceUI(problems[tmp]);
+            });
         }
     }
 

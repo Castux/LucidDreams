@@ -11,7 +11,7 @@ public class PlayerProgression : MonoBehaviour
     private List<Clue> collectedClues;
     private int totalPoints;
     public List<Problem> problems;
-    private List<Problem> solvedProblems;
+    public List<Problem> solvedProblems;
 
     private void Awake()
     {
@@ -24,13 +24,11 @@ public class PlayerProgression : MonoBehaviour
     public void SwitchToDayTime()
     {
         SceneManager.LoadScene("DayTime");
-
-        FindObjectOfType<OpenNotebook>().SetProblems(problems, solvedProblems);
     }
 
     public void SwitchToDream()
     {
-        SceneManager.LoadScene("DreamScene");
+        SceneManager.LoadScene("DreamWorld");
     }
 
     public void SolveProblem(Problem problem)
