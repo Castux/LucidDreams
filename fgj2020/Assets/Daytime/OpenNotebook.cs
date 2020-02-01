@@ -47,6 +47,8 @@ public class OpenNotebook : MonoBehaviour
 
         clues.Clear();
 
+        // TODO: populate from the actual gathered clues
+
         for (int i = 0; i < 20; i++)
             clues.Add("This is a super clue. With it you'll figure out why your life sucks so much. It's sad really. But true. " + i);
     }
@@ -71,7 +73,7 @@ public class OpenNotebook : MonoBehaviour
 
     private void UpdateProblemsPage()
     {
-
+        // TODO: not dynamic since the list is static?
     }
 
     private void UpdateCluesOnPage()
