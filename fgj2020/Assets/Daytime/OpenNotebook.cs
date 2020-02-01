@@ -19,17 +19,9 @@ public class OpenNotebook : MonoBehaviour
     public int CluesPerSpread = 12;
 
     private int currentPage;
-    private List<string> clues;
+    private List<string> clues = new List<string>();
 
     public List<Button> problemButtons;
-
-    public void Start()
-    {
-        var playerProg = FindObjectOfType<PlayerProgression>();
-
-        if(playerProg != null)
-            SetProblems(playerProg.problems, playerProg.solvedProblems);
-    }
 
     private void SetProblems(List<Problem> problems, List<Problem> solvedProblems)
     {
@@ -63,8 +55,16 @@ public class OpenNotebook : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
+
+        var playerProg = FindObjectOfType<PlayerProgression>();
+
+        if (playerProg != null)
+        {
+            SetProblems(playerProg.problems, playerProg.solvedProblems);
+            clues = playerProg.GetCollectedClueTexts();
+        }
+
         currentPage = 0;
-        Populate(new List<string>());
 
         UpdatePageContent();
     }
@@ -89,16 +89,6 @@ public class OpenNotebook : MonoBehaviour
         {
             UpdatePageContent();
         }
-    }
-
-    private void Populate(List<string> clues)
-    {
-        this.clues = clues;
-
-        clues.Clear();
-
-        for (int i = 0; i < 20; i++)
-            clues.Add("This is a super clue. With it you'll figure out why your life sucks so much. It's sad really. But true. " + i);
     }
 
     private void UpdatePageContent()
