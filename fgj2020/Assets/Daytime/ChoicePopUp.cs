@@ -16,13 +16,19 @@ public class ChoicePopUp : MonoBehaviour
     private void Awake()
     {
         goToDreamButton.onClick.AddListener(GoToDreamButtonPress);
+        ClearChoices();
     }
 
     private void GoToDreamButtonPress()
     {
         goToDreamButton.gameObject.SetActive(false);
 
-        SceneManager.LoadScene("DreamScene");
+        Invoke("GoToDream", 2f);
+    }
+
+    void GoToDream()
+    {
+        FindObjectOfType<PlayerProgression>().SwitchToDream();
     }
 
     public void OpenChoicePopUp(Problem problem)
@@ -39,13 +45,14 @@ public class ChoicePopUp : MonoBehaviour
             choiceButtons[i].gameObject.SetActive(true);
             choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>().SetText(problem.choices[i].choiceText);
             choiceButtons[i].onClick.RemoveAllListeners();
-            choiceButtons[i].onClick.AddListener(() => ChooseChoice(problem.choices[i].points));
+            choiceButtons[i].onClick.AddListener(() => ChooseChoice(problem, problem.choices[i].points));
         }
     }
 
-    private void ChooseChoice(int points)
+    private void ChooseChoice(Problem problem, int points)
     {
         FindObjectOfType<PlayerProgression>().ModifyPoints(points);
+        FindObjectOfType<PlayerProgression>().SolveProblem(problem);
 
         ClearChoices();
 

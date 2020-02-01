@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,35 @@ public class OpenNotebook : MonoBehaviour
 
     private int currentPage;
     private List<string> clues;
+
+    public List<Button> problemButtons;
+
+    public void SetProblems(List<Problem> problems, List<Problem> solvedProblems)
+    {
+        foreach(Button button in problemButtons)
+        {
+            button.onClick.RemoveAllListeners();
+        }
+
+        for (int i = 0; i < problems.Count && i < problemButtons.Count; i++)
+        {
+            problemButtons[i].GetComponentInChildren<TextMeshProUGUI>().SetText(problems[i].problemTitle);
+            if (solvedProblems.Contains(problems[i]))
+            {
+                problemButtons[i].GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+
+                continue;
+            }
+
+            problemButtons[i].gameObject.SetActive(true);
+            problemButtons[i].onClick.AddListener(() => OpenChoiceUI(problems[i]));
+        }
+    }
+
+    void OpenChoiceUI(Problem problem)
+    {
+        FindObjectOfType<ChoicePopUp>().OpenChoicePopUp(problem);
+    }
 
     public void Open()
     {

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89de7d76deb774686b315ea2e9a560, type: 3}
+  m_Name: Problem1_WorkPerformance
+  m_EditorClassIdentifier: 
+  problemTitle: Work Performance is Suffering
+  choices:
+  - choiceText: Email the boss to remind him of your personal strengths and how you
+      can apply them to more relevant tasks
+    points: 15
+  - choiceText: I should turn off the phone at my desk to block out the distraction
+      and focus better
+    points: -10
+  - choiceText: No more breaks at the water cooler for me
+    points: -5
+  - choiceText: Quit
+    points: -15

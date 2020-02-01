@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89de7d76deb774686b315ea2e9a560, type: 3}
+  m_Name: Problem3_NoLife
+  m_EditorClassIdentifier: 
+  problemTitle: No Life
+  choices:
+  - choiceText: "I\u2019m the last person to leave the office every night, I should
+      aim to leave with everyone else."
+    points: 15
+  - choiceText: I call my friends for a night out but never hear back from them anymore.  I
+      should make new friends.
+    points: -15
+  - choiceText: I watch too many TV shows and videos every night when I get home from
+      work.  Maybe I should do something more adventurous.
+    points: -5
+  - choiceText: "I\u2019m losing my love of reading.  I need a new hobby."
+    points: -10

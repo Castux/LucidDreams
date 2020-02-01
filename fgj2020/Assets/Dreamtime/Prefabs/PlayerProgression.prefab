@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de9bdc21649da144936fe61eb8be9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  problems:
+  - {fileID: 11400000, guid: 7c321640a93bd0e4190922eacfb50bed, type: 2}
+  - {fileID: 11400000, guid: 67da43d9146b76f4c83fa127728c79ae, type: 2}
+  - {fileID: 11400000, guid: f15cccddcf8776b4abc826522ed5d9d9, type: 2}
+  - {fileID: 11400000, guid: f58e830d9962fa44aa02d1898625de14, type: 2}
+  - {fileID: 11400000, guid: 06dfe2a22d46c75429235deb17d4f921, type: 2}

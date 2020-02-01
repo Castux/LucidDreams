@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89de7d76deb774686b315ea2e9a560, type: 3}
+  m_Name: Problem5_SettingPersonalBoundaries
+  m_EditorClassIdentifier: 
+  problemTitle: 'Setting Personal Boundaries  '
+  choices:
+  - choiceText: "People always want something ...and I\u2019m always willing to give
+      it.  I need to say No sometimes."
+    points: 15
+  - choiceText: "I\u2019m too overwhelmed.  I need to cut something out of my life."
+    points: -10
+  - choiceText: Time to turn the phone off and close my eyes for a minute.  Then I
+      can enjoy the peace and quiet for the sweet moment it lasts.
+    points: -5
+  - choiceText: This is fine.
+    points: -15

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89de7d76deb774686b315ea2e9a560, type: 3}
+  m_Name: Problem2_DontEatWellEnough
+  m_EditorClassIdentifier: 
+  problemTitle: "Don\u2019t Eat Well Enough"
+  choices:
+  - choiceText: I order too much takeaway.  I should cook this weekend.
+    points: 15
+  - choiceText: "I don\u2019t have the money.  Maybe I should hit up my parents for
+      a little extra. "
+    points: -10
+  - choiceText: I hate the taste of salad and vegetables.
+    points: -15
+  - choiceText: "I skip lunch all the time at work.  I\u2019ll make up for it later. "
+    points: -5

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb89de7d76deb774686b315ea2e9a560, type: 3}
+  m_Name: Problem4_NoExercise
+  m_EditorClassIdentifier: 
+  problemTitle: No Exercise
+  choices:
+  - choiceText: "I\u2019m stiff and muscles I didn\u2019t even know I had are sore,
+      I should take it easy."
+    points: -10
+  - choiceText: "My clothes aren\u2019t fitting me anymore, everything is too tight.
+      \ Maybe it\u2019s time I give that gym membership a run."
+    points: 15
+  - choiceText: "I can\u2019t make it up the five flights of stairs to my house without
+      panting.  I should take the stairs every day anyway and build up my endurance
+      that way."
+    points: -5
+  - choiceText: 'I run around a lot at work and get enough steps. '
+    points: -15
