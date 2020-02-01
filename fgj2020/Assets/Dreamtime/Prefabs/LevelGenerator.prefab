@@ -86,7 +86,7 @@ MonoBehaviour:
   cluePrefab: {fileID: 1126297573348096181, guid: b07d0c92b52b7f64f8ef7a6b40a67a48,
     type: 3}
   clueCount: 5
-  minRealCluesPerLevel: 0
+  minRealCluesPerLevel: 2
   clueList:
   - {fileID: 11400000, guid: 88c7d8c943f5ecf43919ebbfef7d30b7, type: 2}
   - {fileID: 11400000, guid: d3ff20f93abf1c047b9f8ced5a329574, type: 2}
