@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019beedb931643f49a91ba8a658268d6, type: 3}
   m_Name: Clue3
   m_EditorClassIdentifier: 
-  clueText: test clue 3
+  clueText: 'As a project manager, I should be managing, not doing busywork and organizing
+    for the boss. '

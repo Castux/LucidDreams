@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 019beedb931643f49a91ba8a658268d6, type: 3}
-  m_Name: Clue2
+  m_Name: Clue9
   m_EditorClassIdentifier: 
-  clueText: "I want to do more, but I can\u2019t quit.  It\u2019s a great job and
-    I make decent money."
+  clueText: "Next week is the marketing meeting!  I\u2019ll have to stay longer to
+    finish the presentation."

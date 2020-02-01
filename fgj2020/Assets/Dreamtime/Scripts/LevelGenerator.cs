@@ -22,7 +22,9 @@ public class LevelGenerator : MonoBehaviour
     public GameObject cluePrefab;
     public int clueCount;
 
+    public int minRealCluesPerLevel;
     public List<Clue> clueList;
+    public List<Clue> fakeClueList;
 
     void Start()
     {
@@ -70,8 +72,9 @@ public class LevelGenerator : MonoBehaviour
                 cubeList.Add(cube);
             }
         }
-
-        for (int i = 0; i < clueCount; i++)
+        
+        int realCluesSpawned = 0;
+        for (int i = 0; i < minRealCluesPerLevel && i < clueCount && cubeList.Count > 0 && clueList.Count > 0; i++)
         {
             if (cubeList.Count == 0 || clueList.Count == 0)
             {
@@ -91,6 +94,38 @@ public class LevelGenerator : MonoBehaviour
             clueObject.GetComponent<DreamClue>().clueData = randomClue;
 
             clueList.Remove(randomClue);
+            cubeList.Remove(randomCube);
+
+            realCluesSpawned++;
+        }
+
+        List<Clue> allClues = new List<Clue>();
+        allClues.AddRange(clueList);
+        allClues.AddRange(fakeClueList);
+
+        for (int i = 0; i < clueCount - realCluesSpawned; i++)
+        {
+            GameObject randomCube = cubeList[Random.Range(0, cubeList.Count)];
+
+            Clue randomClue = allClues[Random.Range(0, allClues.Count)];
+
+            GameObject clueObject = Instantiate(cluePrefab, levelParent);
+            clueObject.transform.position = randomCube.transform.position;
+            clueObject.transform.rotation = randomCube.transform.rotation;
+            clueObject.transform.position += randomCube.transform.up * (randomCube.transform.localScale.y / 2 + 1);
+
+            clueObject.GetComponent<DreamClue>().clueData = randomClue;
+
+            if (clueList.Contains(randomClue))
+            {
+                clueList.Remove(randomClue);
+            }
+            if (fakeClueList.Contains(randomClue))
+            {
+                fakeClueList.Remove(randomClue);
+            }
+
+            allClues.Remove(randomClue);
             cubeList.Remove(randomCube);
         }
 

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019beedb931643f49a91ba8a658268d6, type: 3}
   m_Name: Clue1
   m_EditorClassIdentifier: 
-  clueText: test clue 1
+  clueText: "I can\u2019t believe I have to file papers for the boss tomorrow morning\u2026even
+    though I\u2019m not a secretary."

@@ -86,12 +86,34 @@ MonoBehaviour:
   cluePrefab: {fileID: 1126297573348096181, guid: b07d0c92b52b7f64f8ef7a6b40a67a48,
     type: 3}
   clueCount: 5
+  minRealCluesPerLevel: 0
   clueList:
   - {fileID: 11400000, guid: 88c7d8c943f5ecf43919ebbfef7d30b7, type: 2}
   - {fileID: 11400000, guid: d3ff20f93abf1c047b9f8ced5a329574, type: 2}
   - {fileID: 11400000, guid: eda72c8585cd94947b287de083356a4a, type: 2}
   - {fileID: 11400000, guid: 04967df672edb0a499458abeadad62c5, type: 2}
   - {fileID: 11400000, guid: 4e9d15dd1c150384fa4ec812be359f08, type: 2}
+  - {fileID: 11400000, guid: 852d9afe04efc904e82ab758751cad44, type: 2}
+  - {fileID: 11400000, guid: 2fdb2c1545a77114cb4e3d7e39301ca6, type: 2}
+  - {fileID: 11400000, guid: efa6512e1cd9d864286606f4acc14382, type: 2}
+  - {fileID: 11400000, guid: 0c24fd6f242dde042a7764b55f91dd85, type: 2}
+  - {fileID: 11400000, guid: 4fae87fdb0511d7438db96d163853d21, type: 2}
+  - {fileID: 11400000, guid: 85f34d6afc6ecea47a6bec486c884d51, type: 2}
+  - {fileID: 11400000, guid: dda698e5046e69342b2991a8744a2bd1, type: 2}
+  - {fileID: 11400000, guid: 287f75fd5e49aed4690a3d697b0e84d1, type: 2}
+  - {fileID: 11400000, guid: 5cab35c5a39402e47b809310571abb4b, type: 2}
+  - {fileID: 11400000, guid: d8e65b5aee60ffc498a1b139e3ab2c07, type: 2}
+  fakeClueList:
+  - {fileID: 11400000, guid: 7dce0458c5d0ced45bda7d9c864f51a9, type: 2}
+  - {fileID: 11400000, guid: cd77f890cbe15b24a8e602ffb4177e2c, type: 2}
+  - {fileID: 11400000, guid: 74e5f14091e5b9d4f99b87f19306cdd0, type: 2}
+  - {fileID: 11400000, guid: 2eb6bec166b4b7e49add374fee3d55c1, type: 2}
+  - {fileID: 11400000, guid: 9ab0f1512fd102d4f9bb9357ea338c2d, type: 2}
+  - {fileID: 11400000, guid: 197a21e9ec5653345852f962fc4414b0, type: 2}
+  - {fileID: 11400000, guid: 4bf32d10e5ee70c4f9f4ebcde42a9cfe, type: 2}
+  - {fileID: 11400000, guid: 70189cc6d19697c4181dd48331b0b3f2, type: 2}
+  - {fileID: 11400000, guid: 5ab917f95d3bbcc41a6efc62280c93d1, type: 2}
+  - {fileID: 11400000, guid: 314fc4b24745af0479a522a4bfa29062, type: 2}
 --- !u!114 &6029762347503248328
 MonoBehaviour:
   m_ObjectHideFlags: 0
