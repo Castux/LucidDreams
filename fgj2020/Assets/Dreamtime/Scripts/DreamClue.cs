@@ -13,6 +13,7 @@ public class DreamClue : MonoBehaviour
             Debug.Log("Found a clue! Clue text: " + clueData.clueText);
             // add clue to memory
             FindObjectOfType<PlayerProgression>().AddClue(clueData);
+            FindObjectOfType<DreamCluePopUpText>().ShowClue(clueData.clueText);
 
             Destroy(gameObject);
         }
