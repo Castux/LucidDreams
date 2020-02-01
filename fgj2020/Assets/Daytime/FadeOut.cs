@@ -4,26 +4,47 @@ using UnityEngine;
 
 public class FadeOut : MonoBehaviour
 {
-    public float Speed = 0.05f;
-
-    public void StartFadeOut(System.Action callback)
+    public enum Direction
     {
-        StartCoroutine(Fade(callback));
+        FadeIn,
+        FadeOut
     }
 
-    private IEnumerator Fade(System.Action callback)
+    public float Speed = 0.05f;
+
+    public void StartFadeOut(Direction direction, System.Action callback = null)
+    {
+        StartCoroutine(Fade(direction, callback));
+    }
+
+    private IEnumerator Fade(Direction direction, System.Action callback = null)
     {
         var group = GetComponent<CanvasGroup>();
 
-        for (float f = 1f; f >= 0; f -= Speed)
+        if (direction == Direction.FadeOut)
         {
-            group.alpha = f;
-            yield return new WaitForEndOfFrame();
+
+            for (float f = 1f; f >= 0; f -= Speed)
+            {
+                group.alpha = f;
+                yield return new WaitForEndOfFrame();
+            }
+
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+
+            for (float f = 0f; f <= 1f; f += Speed)
+            {
+                group.alpha = f;
+                yield return new WaitForEndOfFrame();
+            }
         }
 
-        gameObject.SetActive(false);
         group.alpha = 1f;
 
-        callback();
+        callback?.Invoke();
     }
 }

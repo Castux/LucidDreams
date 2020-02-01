@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class OpenNotebook : MonoBehaviour
 {
-    public GameObject LeftPage;
-    public GameObject RightPage;
-
     public GameObject LeftArrow;
     public GameObject RightArrow;
 
@@ -30,9 +27,14 @@ public class OpenNotebook : MonoBehaviour
         }
     }
 
+    private void Populate(List<string> clues)
+    {
+
+    }
+
     private void Close()
     {
-        GetComponent<FadeOut>().StartFadeOut(() =>
+        GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeOut, () =>
         {
             NotebookCover.SetActive(true);
         });
