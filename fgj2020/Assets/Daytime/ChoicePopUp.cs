@@ -7,26 +7,28 @@ using UnityEngine.SceneManagement;
 
 public class ChoicePopUp : MonoBehaviour
 {
-    public GameObject uiParent;
     public TextMeshProUGUI problemTitleText;
     public List<Button> choiceButtons;
+
+    public OpenNotebook notebook;
 
     public Button goToDreamButton;
 
     private void Awake()
     {
-        goToDreamButton.onClick.AddListener(GoToDreamButtonPress);
         ClearChoices();
     }
 
-    private void GoToDreamButtonPress()
+    public void GoToDreamButtonPress()
     {
         goToDreamButton.gameObject.SetActive(false);
-
-        Invoke("GoToDream", 2f);
+        notebook.GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeOut, () =>
+        {
+            Invoke("GoToDream", 2f);
+        });
     }
 
-    void GoToDream()
+    private void GoToDream()
     {
         FindObjectOfType<PlayerProgression>().SwitchToDream();
     }
@@ -34,7 +36,6 @@ public class ChoicePopUp : MonoBehaviour
     public void OpenChoicePopUp(Problem problem)
     {
         gameObject.SetActive(true);
-        uiParent.SetActive(true);
         problemTitleText.SetText(problem.problemTitle);
         foreach(Button choiceButton in choiceButtons)
         {
@@ -70,7 +71,5 @@ public class ChoicePopUp : MonoBehaviour
             choiceButton.GetComponentInChildren<TextMeshProUGUI>().SetText("");
             choiceButton.gameObject.SetActive(false);
         }
-        
-        uiParent.SetActive(false);
     }
 }
