@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class DreamClue : MonoBehaviour
 {
+    public Clue clueData;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Found a clue!");
-            // TODO: add clue to memory
+            Debug.Log("Found a clue! Clue text: " + clueData.clueText);
+            // add clue to memory
+            FindObjectOfType<PlayerProgression>().AddClue(clueData);
+
+            Destroy(gameObject);
         }
     }
 }

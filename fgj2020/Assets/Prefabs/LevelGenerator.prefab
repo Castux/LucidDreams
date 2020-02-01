@@ -77,13 +77,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 5217016188219226172, guid: f1645c2fca4257f41b6c22fb8fe9ef66,
     type: 3}
-  cubeWidth: 2
+  cubeWidth: 3
   squareLevelWidth: 10
-  cylinderCubesPerCircle: 50
   cylinderRadius: 20
-  randomGapChance: 0.25
+  randomGapChance: 0.4
   levelLenght: 50
   levelParent: {fileID: 6029762345977547944}
+  cluePrefab: {fileID: 1126297573348096181, guid: b07d0c92b52b7f64f8ef7a6b40a67a48,
+    type: 3}
+  clueCount: 5
+  clueList:
+  - {fileID: 11400000, guid: 88c7d8c943f5ecf43919ebbfef7d30b7, type: 2}
+  - {fileID: 11400000, guid: d3ff20f93abf1c047b9f8ced5a329574, type: 2}
+  - {fileID: 11400000, guid: eda72c8585cd94947b287de083356a4a, type: 2}
+  - {fileID: 11400000, guid: 04967df672edb0a499458abeadad62c5, type: 2}
+  - {fileID: 11400000, guid: 4e9d15dd1c150384fa4ec812be359f08, type: 2}
 --- !u!114 &6029762347503248328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,4 +106,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldParent: {fileID: 6029762345977547944}
   player: {fileID: 0}
-  worldRotateFactor: 5
+  worldRotateFactor: 4
