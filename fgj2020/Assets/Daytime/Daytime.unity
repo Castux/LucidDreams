@@ -217,7 +217,7 @@ RectTransform:
   m_GameObject: {fileID: 222044854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870003573}
   m_RootOrder: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4db017495c69e8140a56a0e2b669e3f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8027854c01e8d49f7ba9fe1eefcaa898, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -415,7 +415,7 @@ RectTransform:
   m_GameObject: {fileID: 400223487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505482577}
   m_RootOrder: 3
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4db017495c69e8140a56a0e2b669e3f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8027854c01e8d49f7ba9fe1eefcaa898, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -522,6 +522,8 @@ GameObject:
   - component: {fileID: 505482577}
   - component: {fileID: 505482579}
   - component: {fileID: 505482580}
+  - component: {fileID: 505482578}
+  - component: {fileID: 505482581}
   m_Layer: 5
   m_Name: OpenNotebook
   m_TagString: Untagged
@@ -552,6 +554,18 @@ RectTransform:
   m_AnchoredPosition: {x: -218.8, y: 14}
   m_SizeDelta: {x: -633.1, y: -131.8}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &505482578
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505482576}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!222 &505482579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -574,6 +588,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftPage: {fileID: 793529468}
   RightPage: {fileID: 1705143004}
+  LeftArrow: {fileID: 658561755}
+  RightArrow: {fileID: 400223487}
+  NotebookCover: {fileID: 870003572}
+--- !u!114 &505482581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505482576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56932abaf91643d7b1b43ac88294f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658561755
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +631,7 @@ RectTransform:
   m_GameObject: {fileID: 658561755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 505482577}
   m_RootOrder: 2
@@ -630,7 +659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4db017495c69e8140a56a0e2b669e3f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8027854c01e8d49f7ba9fe1eefcaa898, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -784,6 +813,8 @@ GameObject:
   - component: {fileID: 870003575}
   - component: {fileID: 870003574}
   - component: {fileID: 870003576}
+  - component: {fileID: 870003577}
+  - component: {fileID: 870003578}
   m_Layer: 5
   m_Name: NotebookCover
   m_TagString: Untagged
@@ -808,9 +839,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113, y: 13.999}
+  m_AnchoredPosition: {x: -214.2, y: 13.99898}
   m_SizeDelta: {x: 654.4, y: 948.49}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &870003574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,7 +889,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca14d5c491a6541769cc7d3aec7fd794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpenNotebook: {fileID: 505482576}
+  OpenNotebook: {fileID: 505482580}
+--- !u!225 &870003577
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870003572}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &870003578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870003572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56932abaf91643d7b1b43ac88294f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1221093944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1693,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
