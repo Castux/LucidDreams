@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019beedb931643f49a91ba8a658268d6, type: 3}
   m_Name: Clue7
   m_EditorClassIdentifier: 
-  clueText: '*Image of being chained to desk*'
+  clueText: 'A memory, or a fear, takes shape: there I am, hunched over, teetering
+    towers of paperwork swaying dangerously around me, threatening to topple over
+    and bury me beneath their weight. Worse, a gleaming silver chain cuffs me to the
+    desk.  There is no escape, there is only work.'

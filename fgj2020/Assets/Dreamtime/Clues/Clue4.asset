@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 019beedb931643f49a91ba8a658268d6, type: 3}
   m_Name: Clue4
   m_EditorClassIdentifier: 
-  clueText: 312-555-9872 ...I practically have my local pizza place on speed dial.
+  clueText: 312-555-9872... I practically have my local pizza place on speed dial.
