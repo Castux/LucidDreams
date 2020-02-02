@@ -63,6 +63,13 @@ public class OpenNotebook : MonoBehaviour
             SetProblems(playerProg.problems, playerProg.solvedProblems);
             clues = playerProg.GetCollectedClueTexts();
         }
+        else
+        {
+            // Debug clues!
+            clues.Clear();
+            for (int i = 0; i < 20; i++)
+                clues.Add("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci nibh. Integer tincidunt non odio nec vestibulum.");
+        }
 
         currentPage = 0;
 
