@@ -11,9 +11,12 @@ public class ChoicePopUp : MonoBehaviour
     public List<Button> choiceButtons;
 
     public OpenNotebook notebook;
+    public GameObject EndingsContainer;
     public GameObject[] Endings;
+    public GameObject EndingButton;
 
     public Button goToDreamButton;
+    public FadeOut backCoverFader;
 
     private void Awake()
     {
@@ -25,7 +28,11 @@ public class ChoicePopUp : MonoBehaviour
         goToDreamButton.gameObject.SetActive(false);
         notebook.GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeOut, () =>
         {
-            Invoke("GoToDream", 2f);
+            backCoverFader.gameObject.SetActive(true);
+            backCoverFader.StartFadeOut(FadeOut.Direction.FadeIn, () =>
+            {
+                Invoke("GoToDream", 2f);
+            });
         });
     }
 
@@ -88,6 +95,8 @@ public class ChoicePopUp : MonoBehaviour
 
     private void DisplayEndings()
     {
+        EndingsContainer.SetActive(true);
+
         var prog = FindObjectOfType<PlayerProgression>();
 
         int endingIndex;
@@ -100,5 +109,16 @@ public class ChoicePopUp : MonoBehaviour
             endingIndex = 2;
 
         Endings[endingIndex].SetActive(true);
+        EndingButton.SetActive(true);
+
+        DestroyImmediate(prog.gameObject);
+    }
+
+    public void OnEndingButtonClicked()
+    {
+        notebook.GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeOut, () =>
+        {
+            SceneManager.LoadScene("TitleScreen");
+        });
     }
 }

@@ -30,6 +30,11 @@ public class LevelGenerator : MonoBehaviour
     {
         GenerateCylinderLevel();
         FindObjectOfType<RotateWorldAroundPlayer>().SetRotationActive(true);
+
+        if (GetComponent<SpawnFloatyCubes>())
+        {
+            GetComponent<SpawnFloatyCubes>().SpawnFloaties(cylinderRadius, levelLenght);
+        }
     }
 
     void GenerateCylinderLevel()
