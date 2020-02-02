@@ -5,6 +5,14 @@ public class TitleScreen : MonoBehaviour
 {
     public FadeOut fader;
     public FadeOut creditsFader;
+    public AudioSource Audio;
+
+    public CanvasGroup NormalBackgroundCanvasGroup;
+
+    public void Update()
+    {
+        Audio.volume = NormalBackgroundCanvasGroup.alpha == 1f ? 0f : 1f;
+    }
 
     public void OnPlayClicked()
     {
