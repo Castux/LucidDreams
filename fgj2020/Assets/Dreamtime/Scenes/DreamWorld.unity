@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f427b675219040d090877e539eeb030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DreamtimeInSeconds: 10
+  DreamtimeInSeconds: 90
   label: {fileID: 747445433}
 --- !u!1 &811887275 stripped
 GameObject:
