@@ -1,0 +1,13 @@
+{
+"companyName": "Dream Team",
+"productName": "Lucid Dreams",
+"dataUrl": "LucidDreams.data.unityweb",
+"wasmCodeUrl": "LucidDreams.wasm.code.unityweb",
+"wasmFrameworkUrl": "LucidDreams.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}
