@@ -40,6 +40,10 @@ public class PlayerProgression : MonoBehaviour
     public const int GoodEnding = 75;
     public const int MediumEnding = 50;
 
+    public AudioSource audioSource;
+    public AudioClip positiveScore;
+    public AudioClip negativeScore;
+
     private void Awake()
     {
         if (_Instance != this)
@@ -109,5 +113,16 @@ public class PlayerProgression : MonoBehaviour
 
         if (TotalPoints > MaxPoints)
             TotalPoints = MaxPoints;
+
+        if (points > 0)
+		{
+            audioSource.clip = positiveScore;
+            audioSource.Play();
+		}
+        else
+		{
+            audioSource.clip = negativeScore;
+            audioSource.Play();
+        }
     }
 }
