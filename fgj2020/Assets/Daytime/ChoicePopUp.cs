@@ -14,6 +14,7 @@ public class ChoicePopUp : MonoBehaviour
     public GameObject[] Endings;
 
     public Button goToDreamButton;
+    public FadeOut backCoverFader;
 
     private void Awake()
     {
@@ -25,7 +26,11 @@ public class ChoicePopUp : MonoBehaviour
         goToDreamButton.gameObject.SetActive(false);
         notebook.GetComponent<FadeOut>().StartFadeOut(FadeOut.Direction.FadeOut, () =>
         {
-            Invoke("GoToDream", 2f);
+            backCoverFader.gameObject.SetActive(true);
+            backCoverFader.StartFadeOut(FadeOut.Direction.FadeIn, () =>
+            {
+                Invoke("GoToDream", 2f);
+            });
         });
     }
 
