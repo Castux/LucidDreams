@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TitleScreen/TitleScreen.unity
+    guid: da35eabb0471c438f9a00337013aa0a8
+  - enabled: 1
     path: Assets/Dreamtime/Scenes/DreamWorld.unity
     guid: 1ec9d473a3e3e154bba80e931a8050fd
   - enabled: 1
