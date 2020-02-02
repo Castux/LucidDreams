@@ -10,7 +10,7 @@ public class DreamClue : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Found a clue! Clue text: " + clueData.clueText);
+            // Debug.Log("Found a clue! Clue text: " + clueData.clueText);
             // add clue to memory
             FindObjectOfType<PlayerProgression>().AddClue(clueData);
             FindObjectOfType<DreamCluePopUpText>().ShowClue(clueData.clueText);
