@@ -23,6 +23,7 @@ public class Spawner : MonoBehaviour
         }
 
         currentPlayer = Instantiate(PlayerPrefab);
+        GetComponent<AudioSource>().Play();
         currentPlayer.transform.position = transform.position;
 
         worldRotater.player = currentPlayer.transform;

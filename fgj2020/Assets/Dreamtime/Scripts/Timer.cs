@@ -18,6 +18,11 @@ public class Timer : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
 
+        if (remainingTime < 10)
+        {
+            FindObjectOfType<AlarmClock>().SoundAlarm(remainingTime);
+        }
+
         if (remainingTime < 0 || Input.GetKeyDown(KeyCode.H))
         {
             remainingTime = 0;
