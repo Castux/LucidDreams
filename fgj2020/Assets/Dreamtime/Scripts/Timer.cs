@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
 
-        if (remainingTime < 0)
+        if (remainingTime < 0 || Input.GetKeyDown(KeyCode.H))
         {
             remainingTime = 0;
             FindObjectOfType<PlayerProgression>().SwitchToDayTime();

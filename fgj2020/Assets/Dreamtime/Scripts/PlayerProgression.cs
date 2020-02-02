@@ -9,16 +9,18 @@ using UnityEngine.SceneManagement;
 public class PlayerProgression : MonoBehaviour
 {
     private List<Clue> collectedClues;
-    private int totalPoints;
+    public int TotalPoints;
     public List<Problem> problems;
     public List<Problem> solvedProblems;
+
+    public const int MaxPoints = 100;
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
         collectedClues = new List<Clue>();
         solvedProblems = new List<Problem>();
-        totalPoints = 25;
+        TotalPoints = 25;
     }
 
     public void SwitchToDayTime()
@@ -57,7 +59,6 @@ public class PlayerProgression : MonoBehaviour
 
     public void ModifyPoints(int points)
     {
-        totalPoints += points;
-        // TODO: update UI
+        TotalPoints += points;
     }
 }
