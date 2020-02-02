@@ -14,6 +14,8 @@ public class PlayerProgression : MonoBehaviour
     public List<Problem> solvedProblems;
 
     public const int MaxPoints = 100;
+    public const int GoodEnding = 75;
+    public const int MediumEnding = 50;
 
     private void Awake()
     {
@@ -60,5 +62,11 @@ public class PlayerProgression : MonoBehaviour
     public void ModifyPoints(int points)
     {
         TotalPoints += points;
+
+        if (TotalPoints < 0)
+            TotalPoints = 0;
+
+        if (TotalPoints > MaxPoints)
+            TotalPoints = MaxPoints;
     }
 }

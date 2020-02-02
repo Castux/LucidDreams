@@ -11,6 +11,7 @@ public class ChoicePopUp : MonoBehaviour
     public List<Button> choiceButtons;
 
     public OpenNotebook notebook;
+    public GameObject[] Endings;
 
     public Button goToDreamButton;
 
@@ -59,9 +60,20 @@ public class ChoicePopUp : MonoBehaviour
         FindObjectOfType<PlayerProgression>().SolveProblem(problem);
 
         ClearChoices();
-
-        goToDreamButton.gameObject.SetActive(true);
         notebook.LeftArrow.SetActive(false);
+
+        // End condition check!
+
+        var prog = FindObjectOfType<PlayerProgression>();
+
+        if (prog.problems.Count == prog.solvedProblems.Count)
+        {
+            DisplayEndings();
+        }
+        else
+        {
+            goToDreamButton.gameObject.SetActive(true);
+        }
     }
 
     private void ClearChoices()
@@ -72,5 +84,21 @@ public class ChoicePopUp : MonoBehaviour
             choiceButton.GetComponentInChildren<TextMeshProUGUI>().SetText("");
             choiceButton.gameObject.SetActive(false);
         }
+    }
+
+    private void DisplayEndings()
+    {
+        var prog = FindObjectOfType<PlayerProgression>();
+
+        int endingIndex;
+
+        if (prog.TotalPoints >= PlayerProgression.GoodEnding)
+            endingIndex = 0;
+        else if (prog.TotalPoints >= PlayerProgression.MediumEnding)
+            endingIndex = 1;
+        else
+            endingIndex = 2;
+
+        Endings[endingIndex].SetActive(true);
     }
 }
