@@ -567,6 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Probability: 0.05
   ScaleRange: 0.05
+  GlitchProbFactor: 1
   UseCanvasGroup: 0
 --- !u!1 &711640439
 GameObject:
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   fader: {fileID: 1778883703}
   creditsFader: {fileID: 352090234}
   Audio: {fileID: 1285098371}
-  NormalBackgroundCanvasGroup: {fileID: 1784797155}
+  NormalTitleCanvasGroup: {fileID: 1784797155}
 --- !u!82 &1285098371
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1129,7 +1130,7 @@ GameObject:
   - component: {fileID: 1386144937}
   - component: {fileID: 1386144936}
   m_Layer: 5
-  m_Name: DarkBackground
+  m_Name: DarkTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,7 +1468,7 @@ GameObject:
   - component: {fileID: 1784797155}
   - component: {fileID: 1784797156}
   m_Layer: 5
-  m_Name: Background
+  m_Name: NormalTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,6 +1557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Probability: 0.02
   ScaleRange: 0
+  GlitchProbFactor: 3
   UseCanvasGroup: 1
 --- !u!1 &1788480761
 GameObject:
@@ -1716,4 +1718,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Probability: 0.07
   ScaleRange: 0.05
+  GlitchProbFactor: 1
   UseCanvasGroup: 0

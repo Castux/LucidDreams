@@ -6,6 +6,8 @@ public class Glitcher : MonoBehaviour
     public float Probability = 0.01f;
     public float ScaleRange = 0.05f;
 
+    public float GlitchProbFactor = 1f;
+
     public bool UseCanvasGroup = false;
 
     private Image image;
@@ -28,6 +30,11 @@ public class Glitcher : MonoBehaviour
             {
                 var group = GetComponent<CanvasGroup>();
                 group.alpha = (group.alpha == 1f) ? 0f : 1f;
+
+                if (group.alpha == 0f)
+                    Probability *= GlitchProbFactor;
+                else
+                    Probability /= GlitchProbFactor;
             }
             else
             {
@@ -35,6 +42,11 @@ public class Glitcher : MonoBehaviour
                 nextColor.a = (image.color.a == 1f) ? 0f : 1f;
 
                 image.color = nextColor;
+
+                if (nextColor.a == 0f)
+                    Probability *= GlitchProbFactor;
+                else
+                    Probability /= GlitchProbFactor;
             }
         }
     }
