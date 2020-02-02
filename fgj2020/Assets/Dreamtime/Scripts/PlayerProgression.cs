@@ -8,6 +8,29 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PlayerProgression : MonoBehaviour
 {
+    public static PlayerProgression Instance
+    {
+        get
+        {
+            if (_Instance != null)
+            {
+                return _Instance;
+            }
+            else
+            {
+                _Instance = FindObjectOfType<PlayerProgression>();
+                if (_Instance == null)
+                {
+                    Debug.LogError("No PlayerProgression instance in scene");
+                }
+
+                return _Instance;
+            }
+        }
+    }
+
+    private static PlayerProgression _Instance = null;
+
     private List<Clue> collectedClues;
     public int TotalPoints;
     public List<Problem> problems;
@@ -18,6 +41,24 @@ public class PlayerProgression : MonoBehaviour
     public const int MediumEnding = 50;
 
     private void Awake()
+    {
+        if (_Instance != this)
+        {
+            if (_Instance == null)
+            {
+                _Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+        Init();
+    }
+
+    private void Init()
     {
         DontDestroyOnLoad(this);
         collectedClues = new List<Clue>();
