@@ -16,7 +16,9 @@ public class OpenNotebook : MonoBehaviour
 
     public GameObject NotebookCover;
 
-    public int CluesPerSpread = 12;
+    public Clue[] TestClues;
+
+    public int CluesPerSpread = 8;
 
     private int currentPage;
     private List<string> clues = new List<string>();
@@ -67,8 +69,8 @@ public class OpenNotebook : MonoBehaviour
         {
             // Debug clues!
             clues.Clear();
-            for (int i = 0; i < 20; i++)
-                clues.Add("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci nibh. Integer tincidunt non odio nec vestibulum.");
+            foreach(var clue in TestClues)
+                clues.Add(clue.clueText);
         }
 
         currentPage = 0;
@@ -139,7 +141,7 @@ public class OpenNotebook : MonoBehaviour
 
             var textComp = clue.GetComponentInChildren<Text>();
             textComp.text = clues[i];
-            textComp.alignment = (i - startIndex <= 5) ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
+            textComp.alignment = (i - startIndex < CluesPerSpread / 2) ? TextAnchor.MiddleRight : TextAnchor.MiddleLeft;
         }
 
         RightArrow.SetActive(true);
