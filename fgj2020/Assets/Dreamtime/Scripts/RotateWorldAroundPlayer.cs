@@ -7,21 +7,53 @@ public class RotateWorldAroundPlayer : MonoBehaviour
     public Transform worldParent;
     public Transform player;
 
-    public float worldRotateFactor;
+    public float cylinderRotateFactor;
+    public float torusRotateFactor;
 
-    private bool rotateActive = false;
+    private bool cylinderRotateActive = false;
+    private bool torusRotateActive = false;
+    private List<GameObject> torusRings;
+
+    private Vector3 previousPlayerPosition;
 
     private void Update()
     {
-        if (rotateActive)
+        if (cylinderRotateActive)
         {
-            worldParent.rotation = Quaternion.Euler(0f, 0f, player.position.x * -worldRotateFactor);
-            worldParent.position = new Vector3(player.position.x, worldParent.position.y, worldParent.position.z);
+            RotateCylinder();
         }
+        else if (torusRotateActive)
+        {
+            RotateTorus();
+        }
+
+        previousPlayerPosition = player.position;
     }
 
-    public void SetRotationActive(bool activate)
+    public void SetCylinderRotationActive(bool activate)
     {
-        rotateActive = activate;
+        cylinderRotateActive = activate;
+    }
+
+    public void SetTorusRotationActive(bool activate, List<GameObject> torusRings)
+    {
+        torusRotateActive = activate;
+        this.torusRings = torusRings;
+    }
+
+    void RotateCylinder()
+    {
+        worldParent.rotation = Quaternion.Euler(0f, 0f, player.position.x * -cylinderRotateFactor);
+        worldParent.position = new Vector3(player.position.x, worldParent.position.y, worldParent.position.z);
+    }
+
+    void RotateTorus()
+    {
+        worldParent.position = new Vector3(player.position.x, worldParent.position.y, player.position.z);
+        worldParent.rotation = Quaternion.Euler(0f, 0f, player.position.x * -torusRotateFactor);
+        foreach(GameObject torusRing in torusRings)
+        {
+            torusRing.transform.localRotation *= Quaternion.Euler(0f, (player.position.z - previousPlayerPosition.z) * cylinderRotateFactor, 0f);
+        }
     }
 }
