@@ -6,9 +6,11 @@ public class RotateWorldAroundPlayer : MonoBehaviour
 {
     public Transform worldParent;
     public Transform player;
+    public Transform skyboxCamera;
 
     public float cylinderRotateFactor;
     public float torusRotateFactor;
+    public float skyboxRotateFactor;
 
     private bool cylinderRotateActive = false;
     private bool torusRotateActive = false;
@@ -51,6 +53,10 @@ public class RotateWorldAroundPlayer : MonoBehaviour
     {
         worldParent.position = new Vector3(player.position.x, worldParent.position.y, player.position.z);
         worldParent.rotation = Quaternion.Euler(0f, 0f, player.position.x * -torusRotateFactor);
+
+        // Rotate skybox camera to make skybox rotate
+        skyboxCamera.rotation = player.Find("FirstPersonCharacter").rotation * Quaternion.Euler(player.position.x * skyboxRotateFactor, 0f, 0f);
+
         foreach(GameObject torusRing in torusRings)
         {
             torusRing.transform.localRotation *= Quaternion.Euler(0f, (player.position.z - previousPlayerPosition.z) * cylinderRotateFactor, 0f);

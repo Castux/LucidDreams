@@ -27,8 +27,8 @@ public class LevelGenerator : MonoBehaviour
     public List<Clue> fakeClueList;
 
     public float torusRadius;
-    public float angleStep1;
-    public float angleStep2;
+    public float cylinderAngleStep;
+    public float torusAngleStep;
 
     void Start()
     {
@@ -53,10 +53,10 @@ public class LevelGenerator : MonoBehaviour
 
         float cylinderSteps = ((2 * Mathf.PI * cylinderRadius) / cubeWidth);
         float torusSteps = ((2 * Mathf.PI * (torusRadius + cylinderRadius)) / cubeWidth);
-        angleStep1 = 360f / cylinderSteps;
-        angleStep2 = 360f / torusSteps;
+        cylinderAngleStep = 360f / cylinderSteps;
+        torusAngleStep = 360f / torusSteps;
 
-        for (float angle2 = 0; angle2 < 360; angle2 += angleStep2)
+        for (float angle2 = 0; angle2 < 360; angle2 += torusAngleStep)
         {
             float angle2Radians = angle2 * Mathf.Deg2Rad;
             GameObject torusRing = new GameObject("TorusRing");
@@ -64,17 +64,17 @@ public class LevelGenerator : MonoBehaviour
             torusRing.transform.position = new Vector3(torusRadius * Mathf.Cos(angle2Radians), torusRadius * Mathf.Sin(angle2Radians), 0f) + Vector3.up * (torusRadius + cylinderRadius);
             torusRing.transform.rotation = Quaternion.Euler(0f, 0f, angle2);
 
-            for (float angle = 0; angle < 360; angle += angleStep1)
+            for (float angle = 0; angle < 360; angle += cylinderAngleStep)
             {
                 float angleRadians = angle * Mathf.Deg2Rad;
                 float x = (torusRadius + cylinderRadius * Mathf.Cos(angleRadians)) * Mathf.Cos(angle2Radians);
                 float y = (torusRadius + cylinderRadius * Mathf.Cos(angleRadians)) * Mathf.Sin(angle2Radians);
                 float z = cylinderRadius * Mathf.Sin(angleRadians);
 
-                // if (Random.Range(0, 1f) < randomGapChance)
-                // {
-                //     continue;
-                // }
+                if (Random.Range(0, 1f) < randomGapChance)
+                {
+                    continue;
+                }
 
                 Vector3 position = new Vector3(x, y, z) + Vector3.up * (torusRadius + cylinderRadius);
 
